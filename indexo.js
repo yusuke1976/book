@@ -1,8 +1,11 @@
 const btn = document.getElementById("btn");
+const formText = document.getElementById("formText");
 
 btn.addEventListener('click', async() => {
     // フォームに入力されたテキストの取得
-    const textValue = document.getElementById("formText").value;
+    const textValue = formText.value;
+    if (!textValue) return; // 入力がない場合は処理を中断
+
     // 書籍検索ができるGoogle Books APIのエンドポイントにフォームから取得したテキストを埋め込む
     const res = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${textValue}`);
     const data = await res.json();
@@ -74,4 +77,8 @@ btn.addEventListener('click', async() => {
             continue;
         };
     };
+
+    // 検索後に入力フォームの値をクリアする
+    formText.value = '';
+
 });
