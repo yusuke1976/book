@@ -11,15 +11,12 @@
     <body>    
         <main>
             <section class="py-5 text-center container">
-                    <div class="col-lg-6 col-md-8 mx-auto">
+                    <div class="col-lg-6 col-md-5 mx-auto py-2">
                         <h1 class="mb-3 fw-medium">書籍検索サービス</h1>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">タイトル</span>
-                                <input type="text" id="formText" name="myFormText" class="form-control" aria-label="books" aria-describedby="basic-addon1">
-                            </div>
-                            <button id="btn" class="btn btn-primary my-2">本を検索</button>
-                        <p>
-                        </p>
+                                    <div class="input-group">
+                                        <input type="text" id="formText" name="myFormText" class="form-control" placeholder="本のタイトルを入力" aria-label="books" aria-describedby="btn">
+                                        <button id="btn" class="btn btn-primary">検索</button>
+                                    </div>                            
                     </div>
             </section>
             <div id="bookItem" class="album py-5 bg-light">
